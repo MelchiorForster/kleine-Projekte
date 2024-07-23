@@ -1,10 +1,15 @@
+age = document.getElementById("alter").value;
 
-
-const age=28;
-
-if (age >= 18){
-    console.log("Welcome to our Homepage")
-}
-else{
-    console.log("Grow up kiddo!!")
-}
+document.getElementById("b1").onclick = function () {
+  age = document.getElementById("alter").value;
+  if (age < 18) {
+    document.getElementById("output").textContent = "grow up, kiddo!!";
+  } else {
+    document.getElementById("output").textContent = "Welcome to our page!";
+  }
+};
+// ternary operator
+//document.getElementById("b1").onclick = function(){
+//  age = document.getElementById("alter").value;
+//   document.getElementById("output").textContent = age < 18 ? "werd erstmal erwachsen!" : "Welcome to our page!";
+// }

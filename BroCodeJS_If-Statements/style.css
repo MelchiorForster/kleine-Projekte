@@ -1,0 +1,10 @@
+h1 {
+  display: block;
+  text-align: center;
+  color: blue;
+}
+
+#alter {
+  max-width: 50px;
+  font-size: larger;
+}
