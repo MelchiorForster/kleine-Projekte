@@ -1,0 +1,16 @@
+
+
+h1{
+    color: hsl(223, 100%, 64%);
+}
+
+
+form{
+    text-align: center;
+    margin: auto;
+    background-color: aliceblue;
+    padding: auto;
+    max-width: 250px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black;
+}
