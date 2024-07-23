@@ -90,3 +90,56 @@ function myFunction(index, item, element) {
 
   return element;
 }
+
+function passwordGen(
+  passwordLength,
+  includeNumbers,
+  includeSymbols,
+  includeUpperCase,
+  includeLowerCase
+) {
+  const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  const numbers = "0123456789";
+  const symbols = "!@#$%^&*()_+=";
+
+  let allowedchars = "";
+  let password = "";
+
+  allowedchars += includeUpperCase ? upperCase : "";
+  allowedchars += includeLowerCase ? lowerCase : "";
+  allowedchars += includeNumbers ? numbers : "";
+  allowedchars += includeSymbols ? symbols : "";
+
+  if (passwordLength < 6) {
+    return "password length must be at least 6 characters";
+  } else if (passwordLength > 16) {
+    return "password length must be less than 16 characters";
+  }
+
+  if (allowedchars.length === 0) {
+    return " must select at least one character type";
+  }
+
+  for (let i = 0; i < passwordLength; i++) {
+    const randomIndex = Math.floor(Math.random() * allowedchars.length);
+    password += allowedchars[randomIndex];
+  }
+
+  return password;
+}
+
+const passwordLength = 8;
+const includeUpperCase = true;
+const includeLowerCase = true;
+const includeNumbers = true;
+const includeSymbols = true;
+
+const password = passwordGen(
+  passwordLength,
+  includeNumbers,
+  includeSymbols,
+  includeUpperCase,
+  includeLowerCase
+);
+console.log(`Generated password = ${password}`);
